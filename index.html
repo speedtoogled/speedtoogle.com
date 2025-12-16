@@ -3,39 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speedtoogle</title>
+    <title>Speedtoogle - Dein Minecraft Server</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Willkommen auf meiner Website!</h1>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Über mich</h2>
-            <p>Das ist meine erste GitHub Pages Website.</p>
-        </section>
-        
-        <section>
-            <h2>Projekte</h2>
-            <ul>
-                <li>Projekt 1</li>
-                <li>Projekt 2</li>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="server-status">
+                <span class="online-dot"></span>
+                <span class="player-count">1.247</span>
+                <span class="status-text">SPIELER ONLINE</span>
+            </div>
+            <div class="server-address">
+                <span class="address-label">JETZT SPIELEN:</span>
+                <span class="address">SPEEDTOOGLE.COM</span>
+                <button class="copy-btn" onclick="copyAddress()">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">SPEEDTOOGLE</span>
+                <span class="logo-dot">.</span>
+                <span class="logo-net">NET</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">STARTSEITE</a></li>
+                <li><a href="#" class="nav-link">SPIELE</a></li>
+                <li><a href="#" class="nav-link">CLANS</a></li>
+                <li><a href="#" class="nav-link">FORUM</a></li>
+                <li><a href="#" class="nav-link">SUPPORT</a></li>
+                <li><a href="#" class="nav-link">SHOP</a></li>
+                <li><a href="#" class="nav-btn">LOGIN</a></li>
             </ul>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Mein Name</p>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Willkommen auf</h1>
+                <div class="hero-logo">
+                    <span class="hero-logo-main">SPEEDTOOGLE</span>
+                    <span class="hero-logo-dot">.</span>
+                    <span class="hero-logo-net">NET</span>
+                </div>
+                <p class="hero-subtitle">Dein #1 Minecraft-Server<br><span class="subtitle-highlight">Community. Abenteuer. Spaß.</span></p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">
+                        <i class="fas fa-play"></i> JETZT SPIELEN
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-users"></i> DISCORD JOINEN
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35,6.36,119.13-6.25,37-12.24,69.48-36.31,101.08-58.77,23.43-20.67,49.01-39.2,76.65-54.59C1007.56,5.18,1065.51-2.12,1133,5.33c68.9,7.62,119.08,60.9,136.7,125.26,16.37,61.81,20.23,126.43,15.65,189.34C1279.48,472.94,1326,536.69,1380,563.2c31.87,15.68,64.99,27.12,99.41,30.67,72.63,7.29,140.13-18.9,195.58-57.46,53.06-37,99.5-83.03,143.67-130.83,30.46-32.54,57.34-68.54,78.9-107.7,13-23.73,24.11-48.74,32.34-75.25,15-48.84,19.15-100.61,18.34-151.41V0Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-bullhorn"></i> WICHTIGE NEUIGKEITEN</h2>
+                <a href="#" class="view-all">Alle anzeigen <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card featured">
+                    <div class="news-badge">NEU</div>
+                    <div class="news-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3>Season 5 ist gestartet!</h3>
+                        <p>Neue Maps, Belohnungen und Challenges warten auf dich. Spiele jetzt mit!</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-clock"></i> Vor 2 Stunden</span>
+                            <span><i class="far fa-eye"></i> 1.2k Aufrufe</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-content">
+                        <h3>Maintenance Update</h3>
+                        <p>Server-Wartung am 15.12. von 02:00-06:00 Uhr</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-clock"></i> Gestern</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-content">
+                        <h3>Weihnachts-Event</h3>
+                        <p>Spezielle Weihnachts-Lootboxen verfügbar</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-clock"></i> Vor 3 Tagen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-gamepad"></i> BELIEBTE SPIELE</h2>
+            </div>
+            
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon" style="background-color: #f56565;">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>BedWars</h3>
+                    <p>324 Spieler online</p>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon" style="background-color: #4299e1;">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>SkyWars</h3>
+                    <p>287 Spieler online</p>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon" style="background-color: #48bb78;">
+                        <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <h3>Survival Games</h3>
+                    <p>198 Spieler online</p>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon" style="background-color: #ed8936;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>1vs1</h3>
+                    <p>156 Spieler online</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SPEEDTOOGLE.NET</h3>
+                    <p>Dein bester Minecraft-Server seit 2023. Community, Spaß und Action!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>LINKS</h3>
+                    <ul>
+                        <li><a href="#">Startseite</a></li>
+                        <li><a href="#">Server-Regeln</a></li>
+                        <li><a href="#">Team Bewerbung</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>SUPPORT</h3>
+                    <ul>
+                        <li><a href="#">Hilfe-Center</a></li>
+                        <li><a href="#">Bug melden</a></li>
+                        <li><a href="#">Player Report</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>VERBINDEN</h3>
+                    <div class="server-connect">
+                        <code>play.speedtoogle.net</code>
+                        <button class="copy-btn" onclick="copyAddress()">
+                            <i class="far fa-copy"></i> Kopieren
+                        </button>
+                    </div>
+                    <p class="player-count-footer">
+                        <span class="online-dot"></span>
+                        1.247 Spieler online
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Speedtoogle.net - Alle Rechte vorbehalten.</p>
+                <div class="footer-links">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">Nutzungsbedingungen</a>
+                </div>
+            </div>
+        </div>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
-
-
-<script> 
-
-
-</script>
