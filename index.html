@@ -233,3 +233,110 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+<script>
+function copyAddress() {
+    const address = 'play.speedtoogle.net';
+    navigator.clipboard.writeText(address)
+        .then(() => {
+            // Show success message
+            const btn = event.target.closest('.copy-btn');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Kopiert!';
+            btn.style.background = '#10b981';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy: ', err);
+            alert('Adresse konnte nicht kopiert werden. Bitte manuell kopieren: ' + address);
+        });
+}
+
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '100%';
+                navMenu.style.left = '0';
+                navMenu.style.right = '0';
+                navMenu.style.background = '#0f172a';
+                navMenu.style.padding = '20px';
+                navMenu.style.gap = '15px';
+                navMenu.style.borderTop = '1px solid rgba(255,255,255,0.1)';
+            }
+        });
+    }
+    
+    // Update player count every 30 seconds (mock)
+    function updatePlayerCount() {
+        const playerCount = document.querySelector('.player-count');
+        const footerCount = document.querySelector('.player-count-footer .online-dot').nextSibling;
+        
+        if (playerCount) {
+            const current = parseInt(playerCount.textContent);
+            const change = Math.floor(Math.random() * 21) - 10; // -10 to +10
+            const newCount = Math.max(1000, current + change);
+            playerCount.textContent = newCount.toLocaleString('de-DE');
+        }
+        
+        if (footerCount) {
+            footerCount.textContent = ` ${newCount.toLocaleString('de-DE')} Spieler online`;
+        }
+    }
+    
+    setInterval(updatePlayerCount, 30000);
+    
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    document.querySelectorAll('.news-card, .game-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(card);
+    });
+});
+
+// Add smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+    </script>
